@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let mysql = require('mysql');
+let mysql = require('mysql2');
 var cors = require("cors");
 const multer = require('multer');
 require('dotenv').config();
