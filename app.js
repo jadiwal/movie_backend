@@ -6,6 +6,7 @@ var logger = require('morgan');
 let mysql = require('mysql');
 var cors = require("cors");
 const multer = require('multer');
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 
@@ -17,10 +18,10 @@ var app = express();
 
 
 global.db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database:"test_db"
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_ROOT || "root",
+  password: process.env.DB_PASSWORD || "",
+  database:process.env.DB_DBNAME || "test_db"
 });
 
 db.connect(function(err) {
