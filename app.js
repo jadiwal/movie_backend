@@ -15,7 +15,7 @@ var usersRouter = require('./routes/users');
 let moviesRouter = require('./routes/movies')
 
 var app = express();
-
+// Dynamic ENV
 
 global.db = mysql.createConnection({
   host: process.env.DB_HOST || "localhost",
